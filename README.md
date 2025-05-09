@@ -30,4 +30,4 @@ A full-featured Django-based web application designed for managing an online gro
 *(Add screenshots of key pages: Home, Product Page, Cart, Checkout, Admin Panel)*  
 *You can upload images in the repo and link like this:*  
 ```markdown
-![Home Page](screenshots/home.png)
+![Home Page](https://github.com/nitesh6354/Glocery_Store_Appllication/blob/main/screenshots/home.png)
