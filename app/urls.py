@@ -38,8 +38,13 @@ urlpatterns = [
     name='passwordchangedone'),
     path('logout/', auth_view.LogoutView.as_view(next_page='login'), name='logout'),
 
-    path('password-reset/',auth_view.PasswordResetView.as_view(template_name='app/password_reset.html',
-    form_class=MyPasswordChangeForm),name='password_reset'),
+    # path('password-reset/',auth_view.PasswordResetView.as_view(template_name='app/password_reset.html',
+    # form_class=MyPasswordChangeForm),name='password_reset'),
+    path('password-reset/', auth_view.PasswordResetView.as_view(
+    template_name='app/password_reset.html',
+    form_class=MyPasswordResetForm  # ✅ Correct form
+    ), name='password_reset'),
+
     path('password-reset/done/',auth_view.PasswordResetDoneView.as_view(template_name='app/password_reset_done.html'),name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/',auth_view.PasswordResetConfirmView.as_view(template_name='app/password_reset_confirm.html',form_class= MysetPasswordForm) ,name='password_reset_confirm'),
     path('password-reset-complete/',auth_view.PasswordResetCompleteView.as_view(template_name='app/password_reset_complete.html'),name='password_reset_complete'),
